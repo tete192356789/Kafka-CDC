@@ -2,16 +2,18 @@
 
   {
     "name" : "mysql-source",
-    "connector.class": "MySqlSource",
-    "connection.host" : "34.143.173.30",
-    "connection.port" : "3306",
-    "connection.user" : "root",
-    "connection.password": "tete",
-    "ssl.mode": "prefer",
-    "db.name": "db1",
-    "table.whitelist": "table1",
-    "timestamp.column.name": "created_at",
-    "output.data.format": "JSON",
-    "db.timezone": "UCT",
-    "tasks.max" : "1"
+    "config":  {
+      "connector.class": "MySqlSource",
+      "connection.host" : "34.143.173.30",
+      "connection.port" : "3306",
+      "connection.user" : "root",
+      "connection.password": "tete",
+      "ssl.mode": "prefer",
+      "db.name": "db1",
+      "table.whitelist": "table1",
+      "timestamp.column.name": "created_at",
+      "output.data.format": "JSON",
+      "db.timezone": "UCT",
+      "tasks.max" : "1"
+    }
 }
