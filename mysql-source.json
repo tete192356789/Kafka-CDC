@@ -1,7 +1,7 @@
 {
     "name": "mysql-source",
     "config": {
-      "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+      "connector.class": "MySqlCdcSourceV2",
       "database.hostname": "34.143.173.30",
       "database.port": "3306",
       "database.user": "root",
