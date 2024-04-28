@@ -1,19 +1,21 @@
-
-
-  {
-    "name" : "mysql-source",
-    "config":  {
-      "connector.class": "MySqlSource",
-      "connection.host" : "34.143.173.30",
-      "connection.port" : "3306",
-      "connection.user" : "root",
-      "connection.password": "tete",
-      "ssl.mode": "prefer",
-      "db.name": "db1",
-      "table.whitelist": "table1",
-      "timestamp.column.name": "created_at",
-      "output.data.format": "JSON",
-      "db.timezone": "UCT",
-      "tasks.max" : "1"
+{
+    "name": "mysql-source",
+    "config": {
+      "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+      "database.hostname": "34.143.173.30",
+      "database.port": "3306",
+      "database.user": "root",
+      "database.password": "tete",
+      "database.server.name": "testdb",
+      "table.whitelist": "db1.table1",
+      "database.history.kafka.bootstrap.servers": "broker:9092",
+      "database.history.kafka.topic": "mysql2mysql",
+      "decimal.handling.mode": "double",
+      "include.schema.changes": "true",
+      "key.converter": "io.confluent.connect.avro.AvroConverter",
+      "value.converter": "io.confluent.connect.avro.AvroConverter",
+      "key.converter.schema.registry.url": "http://schema-registry:8081",
+      "value.converter.schema.registry.url": "http://schema-registry:8081"
     }
-}
+  }
+
